@@ -1,0 +1,72 @@
+@import "_variables.sass"
+
+.enquiry-button
+  position: fixed
+  bottom: 0
+  right: 5%
+  max-width: 30%
+  display: flex
+  flex-direction: column
+  z-index: 1
+
+  .enquiry-tab
+    padding: 0.6em 2em
+    font-size: 0.9em
+    background-color: $alfiGreen
+    color: white
+    border-radius: 1em 1em 0 0
+    font-weight: 300
+    text-transform: uppercase
+    cursor: pointer
+    text-align: center
+    max-width: 80px
+    align-self: flex-end
+    transition: all 0.1s
+
+    &:hover
+      background-color: lighten( $alfiGreen, 10% )
+
+  .enquiry-form
+    background-color: #eee
+    font-weight: 300
+    max-height: 100%
+    height: 0
+    width: 200px
+    padding: 0em 1.5em
+    border-top-left-radius: 1em
+    transition: all 0.5s ease
+    overflow: hidden!important
+    position: relative
+
+    &.open
+      padding: 1em 1.5em
+      height: 452px
+
+    .ninja-forms-form
+
+      textarea
+        height: 100px
+      label
+        font-weight: 400
+      input
+        font-weight: 300
+        font-size: 0.9em
+        padding: 0.2em 0.4em 
+
+      .submit-wrap
+        text-align: center
+
+        input
+          background: transparent
+          border: 1px solid $alfiGreen
+          color: $alfiGreen
+          padding: 0.2em 1.8em
+          border-radius: 0.5em
+          font-weight: 300
+          transition: all 0.1s
+          cursor: pointer
+
+          &:hover
+            background: $alfiGreen
+            color: white
+            font-weight: 400

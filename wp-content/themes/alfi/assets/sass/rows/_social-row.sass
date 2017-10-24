@@ -1,0 +1,60 @@
+.social-row
+  .wide-content
+    width: 960px
+    text-align: center
+
+    @include tablet
+      width: 767px
+
+    hr
+      margin-bottom: 1.75em
+
+    .instagram-link
+      color: $alfiRed
+      text-decoration: none
+      font-size: 1.2em
+      transition: all 0.1s
+
+      &:hover
+        color: lighten( $alfiRed, 10% )
+
+    .instagram-feed
+      margin-top: 2em
+      display: grid
+      width: 100%
+      overflow: hidden
+
+      a
+        height: fit-content
+        font-size: 0
+        transition: all 0.1s
+
+        &:hover
+          filter: brightness(110%)
+
+      img
+        object-fit: cover
+        width: 100%
+        max-width: 100%
+
+      &.six
+        grid-template-columns: repeat(6, 1fr)
+
+        img
+          height: 156px
+
+        @include tablet
+          grid-template-columns: repeat(3, 1fr)
+
+          img
+            height: 230px
+
+
+      &.three
+        grid-template-columns: repeat(3, 1fr)
+
+        img
+          height: 300px
+
+          @include tablet
+            height: 230px

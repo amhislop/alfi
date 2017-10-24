@@ -1,0 +1,87 @@
+.specs-row
+  background: #ebebeb
+
+  .container
+    position: relative
+
+    .wide-content
+      width: 960px
+      text-align: unset
+      position: relative
+
+      @include tablet
+        width: 700px
+
+    .stripes-center
+      display: flex
+      width: 60px
+      justify-content: space-between
+      margin: 6em auto 0 auto
+
+      .stripe
+        background: white
+        height: 450px
+        width: 15px
+        display: block
+        background: white
+
+        &:first-of-type
+          background: $alfiGreen
+
+        &:last-of-type
+          background: $alfiRed
+
+    .specs-image
+      position: absolute
+      height: 100%
+      width: 100%
+      top: 0
+      display: flex
+      align-items: center
+      justify-content: center
+
+      @include tablet
+        height: 88%
+
+      div
+        width: 300px
+
+        @include tablet
+          width: 250px
+
+        img
+          width: 100%
+
+    .specs-items
+      position: absolute
+      top: 0
+      display: flex
+      align-content: space-around
+      justify-content: space-between
+      height: 85%
+      flex-wrap: wrap
+      width: 100%
+      margin-top: 1.3em
+
+      @include tablet
+        height: 75%
+
+      .specs-description
+        width: 45%
+        border-bottom: 1px solid $primary-color
+
+        &:nth-child(even)
+          text-align: right
+
+        &:nth-child(n+9)
+          border-right: 1px solid $primary-color
+
+      span
+        display: block
+
+        &.specs-title
+          text-transform: uppercase
+          font-weight: bold
+
+        &.specs-subtitle
+          font-weight: 300

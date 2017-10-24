@@ -1,0 +1,62 @@
+@import '_variables.sass'
+
+body
+  margin: 0px
+  font-family: $primary-font
+  font-size: 1.07em
+
+  &.logged-in
+
+    .top-bar
+      margin-top: 32px
+
+section, footer
+    padding: 1em 0 7em
+    width: 100%
+    position: relative
+
+h1, h2, h3, h4, h5
+  font-family: $alfiFont
+
+h1
+  font-size: 4.8em
+
+h2
+  font-size: 3.8em
+
+p, ul, li, label, input
+  font-family: $primary-font
+  font-size: 1.07em
+
+.container
+  // width: 960px
+  margin: 0 auto
+
+  .title
+    text-align: center
+    color: $primary-color
+    margin-bottom: 0
+    margin-top: 0.5em
+  hr
+    border-color: $alfiGreen
+    border-top: none
+    border-left: none
+    border-right: none
+    max-width: 12em
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 2.75em
+
+.wide-content
+  width: 780px
+  margin: 0 auto
+  font-weight: 400
+  color: $primary-color
+  // text-align: center
+
+  @include tablet
+    width: 700px
+
+
+.hide
+  display: none!important
