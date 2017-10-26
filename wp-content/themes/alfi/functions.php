@@ -7,7 +7,7 @@
 function load_resources() {
 
   wp_enqueue_style('site', get_template_directory_uri() . '/assets/css/site.css');
-  wp_enqueue_script('site', get_template_directory_uri() . '/assets/js/product-row.js');
+  wp_enqueue_script('site', get_template_directory_uri() . '/assets/js/bundle.js');
 
 }
 
