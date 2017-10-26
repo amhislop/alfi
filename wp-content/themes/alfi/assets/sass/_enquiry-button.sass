@@ -38,6 +38,18 @@
     overflow: hidden!important
     position: relative
 
+    @include mobile
+      .enquiry-form
+        border-radius: 0
+        padding: 0!important
+
+        &.open
+          height: 80vh
+
+        .ninja-forms-cont
+          padding: 1em
+
+
     &.open
       padding: 1em 1.5em
       height: 452px
@@ -51,7 +63,7 @@
       input
         font-weight: 300
         font-size: 0.9em
-        padding: 0.2em 0.4em 
+        padding: 0.2em 0.4em
 
       .submit-wrap
         text-align: center
@@ -70,3 +82,14 @@
             background: $alfiGreen
             color: white
             font-weight: 400
+
+  @include mobile
+    right: 0
+    left: 0
+    max-width: 100%
+
+    .enquiry-tab
+      max-width: 100%
+      width: 100%
+      border-radius: 0
+      padding: 1em 0

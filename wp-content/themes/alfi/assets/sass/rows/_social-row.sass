@@ -6,6 +6,9 @@
     @include tablet
       width: 767px
 
+    @include mobile
+      width: 320px
+
     hr
       margin-bottom: 1.75em
 
@@ -48,6 +51,9 @@
 
           img
             height: 230px
+
+        @include mobile
+          grid-template-columns: repeat(2, 1fr)
 
 
       &.three

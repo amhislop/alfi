@@ -18,6 +18,18 @@
     background: $alfiGreen
     bottom: 0
 
+  @include mobile
+
+    .wide-content
+      width: 100vw
+
+    .image-container
+      overflow-x: scroll
+      overflow-y: hidden
+
+      &::-webkit-scrollbar
+        display: none
+
   .color-row-images
     display: flex
     justify-content: space-between
@@ -35,6 +47,14 @@
       img
         height: 100%
         width: auto
+
+    @include mobile
+      .color-image
+        height: 300px!important
+
+        &:nth-child(2)
+          margin: 0 5em
+
 
 
   .color-row-buttons

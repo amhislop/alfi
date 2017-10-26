@@ -12,4 +12,10 @@ $( document ).ready(function() {
     $('.enquiry-form').toggleClass('open');
   });
 
+  console.log('ready');
+  $('#menuMobile').on('click', function(){
+    $(this).children().toggleClass('open');
+    $('.menu-primary-menu-links-container').slideToggle();
+  });
+
 });

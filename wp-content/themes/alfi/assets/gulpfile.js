@@ -5,9 +5,9 @@ var gulp        = require('gulp'),
     uglify      = require('gulp-uglify'),
     rename      = require('gulp-rename'),
     plumber     = require('gulp-plumber'),
-    sass        = require('gulp-sass'),
-    browserSync = require('browser-sync').create(),
-    reload      = browserSync.reload;
+    sass        = require('gulp-sass');
+    // browserSync = require('browser-sync'),
+    // reload      = browserSync.reload;
 
 // -------------------
 // Scripts Task
@@ -28,36 +28,36 @@ gulp.task('sass', function() {
   .pipe(plumber())
   .pipe(sass())
   .pipe(rename('site.css'))
-  .pipe(gulp.dest('css'))
-  .pipe(reload({stream:true}));
-})
+  .pipe(gulp.dest('css'));
+  // .pipe(reload({stream:true}));
+});
 
 // -------------------
 // Browser-Sync Task
 // -------------------
-gulp.task('browser-sync', function() {
-  browserSync({
-    bsFiles: {
-      src: ['css/site.css']
-    },
-    options:{
-      // baseDir: "./alfi/wp-content/themes/alfi/assets/",
-      // watchtask: true,
-      proxy: "alfi.dev"
-    }
-  });
-});
+// gulp.task('browser-sync', function() {
+//   browserSync({
+//     bsFiles: {
+//       src: ['css/site.css']
+//     },
+//     options:{
+//       baseDir: "./alfi/wp-content/themes/alfi/assets/",
+//       watchtask: true,
+//       proxy: "alfi.dev"
+//     }
+//   });
+// });
 
 
 // -------------------
 // Watch Task
 // -------------------
 gulp.task('watch', function(){
-  gulp.watch('js/modules/*.js', 'scripts');
-  gulp.watch('sass/**/*.sass', 'sass');
+  gulp.watch('js/modules/*.js', ['scripts']);
+  gulp.watch('sass/**/*.sass', ['sass']);
 });
 
 // -------------------
 // Default Task
-// -------------------
-gulp.task('default', ['scripts', 'sass', 'browser-sync', 'watch']);
+// -------------------'browser-sync'
+gulp.task('default', ['scripts', 'sass', 'watch']);

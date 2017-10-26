@@ -12,6 +12,16 @@
 
       </div>
 
+      <div class="specs-image">
+
+        <div>
+
+          <img src="<?php the_sub_field('specs_row_image') ?>">
+
+        </div>
+
+      </div>
+
       <?php if( have_rows('product_spec') ): ?>
 
         <div class="specs-items">
@@ -32,16 +42,6 @@
 
       <?php endif;?>
 
-      <div class="specs-image">
-
-        <div>
-
-          <img src="<?php the_sub_field('specs_row_image') ?>" alt="#">
-
-        </div>
-
-      </div>
-      
     </div>
 
   </div>

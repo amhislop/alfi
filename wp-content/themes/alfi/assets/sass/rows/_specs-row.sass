@@ -12,6 +12,9 @@
       @include tablet
         width: 700px
 
+      @include mobile
+        width: 320px
+
     .stripes-center
       display: flex
       width: 60px
@@ -39,9 +42,13 @@
       display: flex
       align-items: center
       justify-content: center
+      z-index: 1
 
       @include tablet
         height: 88%
+
+      @include mobile
+        height: 45%
 
       div
         width: 300px
@@ -62,9 +69,13 @@
       flex-wrap: wrap
       width: 100%
       margin-top: 1.3em
+      z-index: 0
 
       @include tablet
         height: 75%
+
+      @include mobile
+        position: initial
 
       .specs-description
         width: 45%
@@ -75,6 +86,12 @@
 
         &:nth-child(n+9)
           border-right: 1px solid $primary-color
+
+        @include mobile
+          width: 100%
+          text-align: center!important
+          border: none!important
+          margin-bottom: 0.5em
 
       span
         display: block
