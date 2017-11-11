@@ -93,12 +93,13 @@ p, ul, li, label, input {
     overflow: hidden !important;
     position: relative; }
     @media (max-width: 766px) {
-      .enquiry-button .enquiry-form .enquiry-form {
+      .enquiry-button .enquiry-form {
         border-radius: 0;
-        padding: 0 !important; }
-        .enquiry-button .enquiry-form .enquiry-form.open {
-          height: 80vh; }
-        .enquiry-button .enquiry-form .enquiry-form .ninja-forms-cont {
+        padding: 0 !important;
+        width: 100vw; }
+        .enquiry-button .enquiry-form.open {
+          height: 90vh !important; }
+        .enquiry-button .enquiry-form .ninja-forms-cont {
           padding: 1em; } }
     .enquiry-button .enquiry-form.open {
       padding: 1em 1.5em;
@@ -281,7 +282,7 @@ p, ul, li, label, input {
             margin: 0;
             text-align: center;
             border-bottom: 1px solid #d4d4d4;
-            padding-bottom: 0.5em; }
+            padding: 0.5em 0; }
             .top-bar .nav-mobile ul li:first-of-type {
               margin-right: initial; }
             .top-bar .nav-mobile ul li a {

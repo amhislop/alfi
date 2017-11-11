@@ -32,18 +32,19 @@
 
       <?php
         $username = 'espressocompany';
-        $json = file_get_contents('https://www.instagram.com/'.$username.'/media/');
+        $json = file_get_contents('https://www.instagram.com/'.$username.'/?__a=1');
         $instagram_feed_data = json_decode($json, true);
-        if (isset($instagram_feed_data['items'])) {
 
-          foreach ($instagram_feed_data['items'] as $item) {
-            $link = $item['link'];
-            $img_url = $item['images']['low_resolution']['url'];
+        if (isset($instagram_feed_data['user']['media']['nodes'])) {
+
+          foreach ($instagram_feed_data['user']['media']['nodes'] as $item) {
+            $link = 'https://www.instagram.com/p/' . $item['code'];
+            $img_url = $item['thumbnail_src'];
             $caption = isset($item['caption']) ? $item['caption']['text'] : '';
 
             ?>
 
-            <a href="<?= $link; ?>">
+            <a href="<?= $link; ?>" target='_blank'>
               <img src="<?= $img_url; ?>" class="insta-item">
             </a>
 

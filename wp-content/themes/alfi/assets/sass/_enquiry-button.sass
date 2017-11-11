@@ -23,6 +23,9 @@
     align-self: flex-end
     transition: all 0.1s
 
+    // @include mobile
+    //   height: 10vh
+
     &:hover
       background-color: lighten( $alfiGreen, 10% )
 
@@ -39,15 +42,16 @@
     position: relative
 
     @include mobile
-      .enquiry-form
-        border-radius: 0
-        padding: 0!important
 
-        &.open
-          height: 80vh
+      border-radius: 0
+      padding: 0!important
+      width: 100vw
 
-        .ninja-forms-cont
-          padding: 1em
+      &.open
+        height: 90vh!important
+
+      .ninja-forms-cont
+        padding: 1em
 
 
     &.open
