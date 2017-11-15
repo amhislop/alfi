@@ -210,6 +210,10 @@ p, ul, li, label, input {
     display: flex;
     flex-direction: row;
     justify-content: flex-end; }
+    .top-bar ul.alternate li {
+      font-size: 1.6em;
+      font-family: "Brush Script MT", cursive;
+      text-transform: capitalize; }
     .top-bar ul li {
       display: block;
       margin-left: 2px;

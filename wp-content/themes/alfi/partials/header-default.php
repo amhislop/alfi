@@ -4,7 +4,7 @@
 
 <?php else : ?>
 
-	<header class="site-header" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/alfi-header.jpeg)">
+	<header class="site-header" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/alfi-header.jpg)">
 
 <?php endif; ?>
 
