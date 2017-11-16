@@ -25,12 +25,17 @@
     @include tablet
       width: 767px
 
+    @include mobile
+      width: 100%
+
   .location-cards
     display: flex
     justify-content: space-between
     flex-wrap: wrap
     margin-top: 1em
 
+    @include mobile
+      margin: 1em
 
     .location-item
       width: 42.5%
@@ -38,6 +43,9 @@
       margin-bottom: 2em
       padding: 1.5em
       box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.1)
+
+      @include mobile
+        width: 100%
 
 
       h4
@@ -54,6 +62,13 @@
       .location-buttons
         display: flex
         justify-content: space-between
+
+        @include mobile
+          flex-direction: column
+
+          a
+            width: 100%!important
+            margin: 0.2em 0
 
         a
           background: transparent
