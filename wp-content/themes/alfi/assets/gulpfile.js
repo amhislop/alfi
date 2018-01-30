@@ -6,19 +6,20 @@ var gulp        = require('gulp'),
     rename      = require('gulp-rename'),
     plumber     = require('gulp-plumber'),
     sass        = require('gulp-sass');
-    // browserSync = require('browser-sync'),
-    // reload      = browserSync.reload;
+    browserSync = require('browser-sync').create(),
+    reload      = browserSync.reload();
 
 // -------------------
 // Scripts Task
 // -------------------
 gulp.task('scripts', function(){
-  gulp.src('js/modules/*.js')
+  gulp.src('./js/app.js')
   .pipe(plumber())
   .pipe(rename('bundle.js'))
   .pipe(uglify())
   .pipe(gulp.dest('js'));
 });
+
 
 // -------------------
 // Sass Task
@@ -35,29 +36,47 @@ gulp.task('sass', function() {
 // -------------------
 // Browser-Sync Task
 // -------------------
-// gulp.task('browser-sync', function() {
-//   browserSync({
-//     bsFiles: {
-//       src: ['css/site.css']
-//     },
-//     options:{
-//       baseDir: "./alfi/wp-content/themes/alfi/assets/",
-//       watchtask: true,
-//       proxy: "alfi.dev"
-//     }
+// gulp.task('browser-sync', function(){
+//   browserSync.init({
+//     server: './'
+    // {
+    //   baseDir: './'
+    //   // directory: true
+    // }
+    // proxy: 'localhost/demo',
+    // notify: false
 //   });
 // });
+
+// gulp.task('browser-sync', function() {
+//     browserSync.init({
+//         proxy: "alfi.dev"
+//     });
+// });
+
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    bsFiles: {
+      src: ['css/site.css']
+    },
+    options:{
+      baseDir: "./",
+      watchtask: true,
+      proxy: "alfi.dev"
+    }
+  });
+});
 
 
 // -------------------
 // Watch Task
 // -------------------
 gulp.task('watch', function(){
-  gulp.watch('js/modules/*.js', ['scripts']);
+  gulp.watch('js/**/*","../../../plugins/**/*.js', ['scripts']);
   gulp.watch('sass/**/*.sass', ['sass']);
 });
 
 // -------------------
 // Default Task
 // -------------------'browser-sync'
-gulp.task('default', ['scripts', 'sass', 'watch']);
+gulp.task('default', ['scripts', 'sass', 'watch', 'browser-sync']);

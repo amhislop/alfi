@@ -1,29 +1,41 @@
-$( document ).ready(function() {
 
-  // Product Row Buttons
+// ----------------------------------
+//
+// Product Row
+//
+// ----------------------------------
 
-  $('.color-row-buttons').children().on('click', function(){
+(function($) {
 
-    $('.color-row-images.'+this.className).show().siblings().hide()
+    if (typeof window.ProductRow == 'undefined') window.ProductRow = {};
 
-  });
+    ProductRow = {
 
-  $('.enquiry-tab').on('click', function(){
-    $('.enquiry-form').toggleClass('open');
-  });
 
-  console.log('ready');
-  $('#menuMobile').on('click', function(){
-    $(this).children().toggleClass('open');
-    $('.menu-primary-menu-links-container').slideToggle();
-  });
+        init: function() {
 
-  // temp PDF open in new tab
-  $('#menu-primary-menu-links li').last().children('a').attr('target', '_blank');
+            console.log("ProductRow::init");
 
-  // alternate nav fonts
-  $('.logo-header').on('click', function() {
-	   $('#menu-primary-menu-links').toggleClass('alternate');
-  });
+            this.cacheDom();
+            this.events();
 
-});
+        },
+
+        cacheDom: function() {
+          this.$button  = $('.color-row-buttons').children();
+          this.$image   = $('.color-row-images');
+
+        },
+
+        events: function() {
+          this.$button.on('click', this.hideSiblings);
+
+        },
+
+        hideSiblings: function() {
+          ProductRow.$image.hide().siblings('.'+this.className).show();
+        }
+
+    }
+
+})(jQuery);
