@@ -47,6 +47,8 @@
 
         }
 
-    }
+    };
+
+    module.exports = Misc;
 
 })(jQuery);

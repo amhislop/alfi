@@ -4,10 +4,10 @@
 //
 // ------------------------------------
 
-var ProductRow         = import('./modules/product-row.js');
-var MobileBars         = import('./modules/mobile-bars.js');
-var EnquiryForm        = import('./modules/enquiry-form.js');
-var Misc               = import('./modules/misc.js');
+var ProductRow         = require('./modules/product-row'),
+    MobileBars         = require('./modules/mobile-bars'),
+    EnquiryForm        = require('./modules/enquiry-form'),
+    Misc               = require('./modules/misc');
 
 jQuery(document).ready(function($) {
 

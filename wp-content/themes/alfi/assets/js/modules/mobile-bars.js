@@ -38,6 +38,8 @@
 
         }
 
-    }
+    };
+
+    module.exports = MobileBars;
 
 })(jQuery);

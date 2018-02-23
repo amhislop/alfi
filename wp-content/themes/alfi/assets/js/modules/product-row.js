@@ -36,6 +36,8 @@
           ProductRow.$image.hide().siblings('.'+this.className).show();
         }
 
-    }
+    };
+
+    module.exports = ProductRow;
 
 })(jQuery);
